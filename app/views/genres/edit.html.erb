@@ -1,0 +1,12 @@
+<h1>Edit Genre</h1>
+
+<%= form_for(@genre) do |f| %>
+  <p>
+    <%= f.label :name, "Name:", for: "genre_name" %>
+    <br>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+  <%= f.submit "Update Genre" %>    
+<% end %>
+
+<p><%= link_to "Back to Genre", genre_path(@genre) %></p>

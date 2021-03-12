@@ -1,0 +1,36 @@
+<h1>Edit Song</h1>
+
+<%= form_for(@song) do |f| %>
+  <p>
+    <%= f.label :name, "Song Title:", for: "song_name" %>
+    <br>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+
+  <p>
+  <h4>Artist ID:</h4>
+    <%= f.number_field :artist_id %>
+    <%# <h4>Artist of the Song:</h4> %>
+    <%# @artists.each do |artist| %>
+      <%#= radio_button :song, :artist_id, artist.id, id: "song[artist_id]" %>
+      <%#= label_tag artist.name %>
+    <%# end %>
+    <h5>New Artist?</h5>
+    <%= text_field_tag :"song[artist_name]" %>
+  </p>
+
+  <p>
+    <h4>Genre ID:</h4>
+    <%= f.number_field :genre_id %>
+    <%# <h4>Genre of the Song:</h4> %>
+    <%# @genres.each do |genre| %>
+      <%#= radio_button :song, :genre_id, genre.id %>
+      <%#= label_tag genre.name %>
+    <%# end %>
+    <h5>New Genre?</h5>
+    <%= text_field_tag :"song[genre_name]" %>
+  </p>
+  <%= f.submit %>
+<% end %>
+
+<p><%= link_to "Back to Song", @song %></p>

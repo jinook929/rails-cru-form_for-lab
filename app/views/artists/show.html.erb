@@ -1,0 +1,20 @@
+<h1>My Artist</h1>
+
+<div><%= link_to "Edit", edit_artist_path(@artist) %></div>
+
+<h3><%= @artist.name %></h3>
+<p><%= @artist.bio %></p>
+
+<p><%= button_to "Delete", @artist, method: :delete, data: {confirm: "Are you sure to delete this?"} %></p>
+
+<h2><%= @artist.name %>'s Songs</h2>
+<% @songs.each do |song| %>
+  <p><%= link_to song.name, song %></p>
+<% end %>
+
+<h2>Genres <%= @artist.name %> Has Covered</h2>
+<% @genres.each do |genre| %>
+  <p><%= link_to genre.name, genre %></p>
+<% end %>
+
+<p><%= link_to "Back to List", artists_path %></p>
